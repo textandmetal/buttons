@@ -14,7 +14,7 @@
 							</ul> -->
 							
 						<p>
-							<a href="../404.html" class="button big wide smooth-scroll-middle">Tidy Site</a>
+							<a href="../articles/WasteManagement.php" class="button big wide smooth-scroll-middle">Waste Management</a>
 						</p>
 						
 						

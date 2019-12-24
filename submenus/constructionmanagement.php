@@ -16,7 +16,7 @@
 						<p>
 							<a href="../articles/introduction.php" class="button big wide smooth-scroll-middle">Introduction</a>
 							<a href="../articles/communication.php" class="button big wide smooth-scroll-middle">Commmunication</a>
-							<a href="../articles/law.php" class="button big wide smooth-scroll-middle">Law</a>
+							<a href="../articles/TheLawandResidentialConstruction.php" class="button big wide smooth-scroll-middle">Law</a>
 							<a href="../articles/tendering.php" class="button big widesmooth-scroll-middle">Tenders</a>
 							<a href="../articles/programming.php" class="button big wide smooth-scroll-middle">Programming</a>
 							<a href="../submenus/furtherreading.php" class="button big widesmooth-scroll-middle">Further Reading</a>
