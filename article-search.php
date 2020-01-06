@@ -80,7 +80,7 @@ echo "<script>window.location.href='index.php'</script>";
 	if(!empty($result)) { 
 		foreach($result as $row) {
 	?>
-<a href="article-view.php?id=<?php echo $row['id'];?>">
+<a href="article-view.php?id=<?php echo $row['topic'];?>">
 <div class="card" >
   <div class="container">
 		<h3><?php echo $row['field1']; ?></h3>
