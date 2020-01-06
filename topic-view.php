@@ -29,7 +29,7 @@ foreach($results as $result)
 
 <div class="row">
 <div class="col-md-12">
-<h1><a href="article-search.php"><?php echo htmlentities($result->topic);?></a></h1>
+<h1><a href="article-search.php"><?php echo htmlentities($result->name);?></a></h1>
 <p>By <?php echo htmlentities($result->field2);?></p>
 <p><?php echo htmlentities($result->field4);?></p>
 <p><?php echo htmlentities($result->field5);?></p>
