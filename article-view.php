@@ -47,7 +47,7 @@ foreach($results as $result)
 {               
 ?>
 
-<h1><a href="article-search.php"><?php echo htmlentities($result->topic);?></a></h1>
+<h1><a href="article-search.php"><?php echo htmlentities($result->type);?></a></h1>
 <form>
 
 <p>id: <?php echo htmlentities($result->id);?></p>
