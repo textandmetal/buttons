@@ -60,10 +60,10 @@ include("dbconfig.php");
 	if(!empty($result)) { 
 		foreach($result as $row) {
 	?>
-<a href="article-view.php?id=<?php echo $row['topic'];?>">
+<a href="article-view.php?id=<?php echo $row['id'];?>">
 <div class="card" >
   <div class="container">
-		<h3><?php echo $row['field1']; ?></h3>
+		<h3><?php echo $row['topic']; ?></h3>
 		<p>Author: <?php echo $row['field2']; ?></p>
 		<p><?php echo $row['field3']; ?></p>
 </div>
