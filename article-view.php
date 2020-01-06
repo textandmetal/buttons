@@ -1,27 +1,6 @@
 <?php
 // include database connection file
 require_once'dbconfig.php';
-if(isset($_POST['update']))
-{
-// Get the userid
-$userid=intval($_GET['id']);
-// Posted Values  
-
-$type=$_POST['type'];
-// Query for Query for Updation
-$sql="update articles set type=:ty where id=:uid";
-//Prepare Query for Execution
-$query = $dbh->prepare($sql);
-// Bind the parameters
-$query->bindParam(':ty',$type,PDO::PARAM_STR);
-$query->bindParam(':uid',$userid,PDO::PARAM_STR);
-// Query Execution
-$query->execute();
-// Mesage after updation
-echo "<script>alert('Record Updated successfully');</script>";
-// Code for redirection
-echo "<script>window.location.href='index.php'</script>"; 
-}
 ?>
 
 
@@ -50,7 +29,4 @@ foreach($results as $result)
 <h1><a href="article-search.php"><?php echo htmlentities($result->type);?></a></h1>
 <form>
 
-<p>id: <?php echo htmlentities($result->id);?></p>
-<form name="insertrecord" method="post">
-     </form>
 <?php }} ?>
