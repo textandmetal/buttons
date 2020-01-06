@@ -65,7 +65,6 @@ foreach($results as $result)
 
 <div class="row">
 <div class="col-md-12">
-<?php include("settings/settings.php"); ?>
 <h1><a href="article-search.php"><?php echo htmlentities($result->field2);?></a></h1>
 <p>By <?php echo htmlentities($result->field3);?></p>
 <p><?php echo htmlentities($result->field4);?></p>
