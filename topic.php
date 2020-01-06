@@ -1,3 +1,30 @@
+<?php
+// include database connection file
+require_once'dbconfig.php';
+?>
+
+
+
+<?php 
+// Get the userid
+$userid=intval($_GET['id']);
+$sql = "SELECT type from topics where id=:uid";
+//Prepare the query:
+$query = $dbh->prepare($sql);
+//Bind the parameters
+$query->bindParam(':uid',$userid,PDO::PARAM_STR);
+//Execute the query:
+$query->execute();
+//Assign the data which you pulled from the database (in the preceding step) to a variable.
+$results=$query->fetchAll(PDO::FETCH_OBJ);
+// For serial number initialization
+$cnt=1;
+if($query->rowCount() > 0)
+{
+//In case that the query returned at least one record, we can echo the records within a foreach loop:
+foreach($results as $result)
+{               
+?>
 		<?php include 'php/head.html'; ?>
 	<body>
 
@@ -8,15 +35,34 @@
 					<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
 						<div class="content">
 
-		<?php include 'php/name.html'; ?>
+<h1><a href="/"><?php echo htmlentities($result->type);?></a></h1>
 
-						<!--	<ul class="actions vertical">
-								<li><a href="index.html" class="button big wide smooth-scroll-middle">Home</a></li>
-							</ul> -->
-							
-		<?php include 'php/mainbuttons.html'; ?>
-						
-							
+<?php
+// This is the second loop in the code
+// Get the userid
+$userid=intval($_GET['id']);
+$sql1 = "SELECT field2 from articles where topic=:uid";
+//Prepare the query:
+$query = $dbh->prepare($sql1);
+//Bind the parameters
+$query->bindParam(':uid',$userid,PDO::PARAM_STR);
+//Execute the query:
+$query->execute();
+//Assign the data which you pulled from the database (in the preceding step) to a variable.
+$results=$query->fetchAll(PDO::FETCH_OBJ);
+// For serial number initialization
+$cnt=1;
+if($query->rowCount() > 0)
+{
+//In case that the query returned at least one record, we can echo the records within a foreach loop:
+foreach($results as $result)
+{               
+?>
+							<a href="/article-view.php?id=<?php echo htmlentities($result->field2);?><?php echo $row['id'];?>" class="button big wide smooth-scroll-middle"><?php echo htmlentities($result->field2);?></a>
+<?php }} ?>
+
+
+<?php }} ?>
 						</div>
 					<!--	<div class="image">
 							<img src="images/thinkpad.png" alt="" />
