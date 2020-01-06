@@ -27,9 +27,6 @@ $query->bindParam(':f4',$field4,PDO::PARAM_STR);
 $query->bindParam(':f5',$field5,PDO::PARAM_STR);
 $query->bindParam(':f6',$field6,PDO::PARAM_STR);
 $query->bindParam(':f7',$field7,PDO::PARAM_STR);
-$query->bindParam(':f8',$field8,PDO::PARAM_STR);
-$query->bindParam(':f9',$field9,PDO::PARAM_STR);
-$query->bindParam(':f10',$field10,PDO::PARAM_STR);
 $query->bindParam(':uid',$userid,PDO::PARAM_STR);
 // Query Execution
 $query->execute();
@@ -45,7 +42,7 @@ echo "<script>window.location.href='index.php'</script>";
 <?php 
 // Get the userid
 $userid=intval($_GET['id']);
-$sql = "SELECT field2,field3,field4,field5,field6,field7,field8,field9,field10,id from articles where id=:uid";
+$sql = "SELECT field2,field3,field4,field5,field6,field7,id from articles where id=:uid";
 //Prepare the query:
 $query = $dbh->prepare($sql);
 //Bind the parameters
@@ -62,11 +59,7 @@ if($query->rowCount() > 0)
 foreach($results as $result)
 {               
 ?>
-<div class="container">
 
-<div class="row">
-<div class="col-md-12">
-<?php include("settings/settings.php"); ?>
 <h1><a href="article-search.php"><?php echo htmlentities($result->field2);?></a></h1>
 <p>By <?php echo htmlentities($result->field3);?></p>
 <p><?php echo htmlentities($result->field4);?></p>
@@ -76,6 +69,4 @@ foreach($results as $result)
 <p>id: <?php echo htmlentities($result->id);?></p>
 <form name="insertrecord" method="post">
      </form>
-	</div>
-</div>
 <?php }} ?>
