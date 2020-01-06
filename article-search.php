@@ -70,13 +70,11 @@ echo "<script>window.location.href='index.php'</script>";
 	$pdo_statement->execute();
 	$result = $pdo_statement->fetchAll();
 ?>
-<div class="table-responsive">                
 	<?php
 	if(!empty($result)) { 
 		foreach($result as $row) {
 	?>
 <a href="article-view.php?id=<?php echo $row['id'];?>"><?php echo $row['field2']; ?></a>
-</div>
 
     <?php
 		}
