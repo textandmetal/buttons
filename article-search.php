@@ -70,22 +70,12 @@ echo "<script>window.location.href='index.php'</script>";
 	$pdo_statement->execute();
 	$result = $pdo_statement->fetchAll();
 ?>
-<form style="margin:auto" name='frmSearch' action='' method='post'>
-<div style='text-align:left;margin:5px 0px;'><input type='text' name='search[keyword]' value="<?php echo $search_keyword; ?>" id='keyword' maxlength='25'></div>
-<a href=""><button class="btn btn-primary"> Search</button></a>
-</form>
-<br>
 <div class="table-responsive">                
 	<?php
 	if(!empty($result)) { 
 		foreach($result as $row) {
 	?>
-<a href="article-view.php?id=<?php echo $row['field2'];?>">
-<div class="card" >
-  <div class="container">
-		<p>Author: <?php echo $row['field4']; ?></p>
-		<p><?php echo $row['field5']; ?></p>
-</div>
+<a href="article-view.php?id=<?php echo $row['id'];?>"><?php echo $row['field2']; ?></a>
 </div>
 
     <?php
