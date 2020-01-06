@@ -31,9 +31,9 @@ foreach($results as $result)
 // This is the second loop in the code
 // Get the userid
 $userid=intval($_GET['id']);
-$sql = "SELECT field2 from articles where topic=:uid"";
+$sql1 = "SELECT field2 from articles where topic=:uid";
 //Prepare the query:
-$query = $dbh->prepare($sql);
+$query = $dbh->prepare($sql1);
 //Bind the parameters
 $query->bindParam(':uid',$userid,PDO::PARAM_STR);
 //Execute the query:
