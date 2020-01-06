@@ -1,7 +1,7 @@
 <?php
 // include database connection file
 require_once'dbconfig.php';
-
+?>
 
 
 <?php 
