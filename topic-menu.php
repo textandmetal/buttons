@@ -5,8 +5,8 @@ include("dbconfig.php");
 ?>
 <?php
 	$database_username = 'root';
-	$database_password = 'GreenJeans33Winter1@';
-	$pdo_conn = new PDO( 'mysql:host=localhost;dbname=buttons', $database_username, $database_password );
+	$database_password = 'greenjeans33';
+	$pdo_conn = new PDO( 'mysql:host=localhost;dbname=EXAMPLE', $database_username, $database_password );
 ?>
 <?php 
 // Code for record deletion
@@ -15,7 +15,7 @@ if(isset($_REQUEST['del']))
 //Get row id
 $uid=intval($_GET['del']);
 //Qyery for deletion
-$sql = "delete from articles WHERE  id=:id";
+$sql = "delete from example WHERE  id=:id";
 // Prepare query for execution
 $query = $dbh->prepare($sql);
 // bind the parameters
@@ -28,12 +28,23 @@ echo "<script>alert('Record Deleted successfully');</script>";
 echo "<script>window.location.href='index.php'</script>"; 
 }
 ?>
+<html>
+<head>
+</head>
+<body>
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<!--<h3><a href="../index.php">Tools Database</a></h3> 
+<p>PHP CRUDVS Operations using PDO Extension</p>
+<a href="add-tool-to-inventory.php"><button class="btn btn-primary"> Add Tool</button></a>
+-->
 <?php	
 	$search_keyword = '';
 	if(!empty($_POST['search']['keyword'])) {
 		$search_keyword = $_POST['search']['keyword'];
 	}
-	$sql = 'SELECT * FROM articles WHERE topic LIKE :keyword  ORDER BY id DESC ';
+	$sql = 'SELECT * FROM example WHERE id LIKE :keyword OR field1 LIKE :keyword OR field2 LIKE :keyword OR field3 LIKE :keyword OR field4 LIKE :keyword OR field4 LIKE :keyword OR field5 LIKE :keyword OR field6 LIKE :keyword OR field7 LIKE :keyword OR field8 LIKE :keyword OR field9 LIKE :keyword OR field10 LIKE :keyword ORDER BY id DESC ';
 	
 	/* Pagination Code starts 
 	$per_page_html = '';
@@ -70,6 +81,8 @@ echo "<script>window.location.href='index.php'</script>";
 	$pdo_statement->execute();
 	$result = $pdo_statement->fetchAll();
 ?>
+<?php include("settings/settings.php"); ?>
+<h1>Article Search</h1>
 <form style="margin:auto" name='frmSearch' action='' method='post'>
 <div style='text-align:left;margin:5px 0px;'><input type='text' name='search[keyword]' value="<?php echo $search_keyword; ?>" id='keyword' maxlength='25'></div>
 <a href=""><button class="btn btn-primary"> Search</button></a>
@@ -80,10 +93,10 @@ echo "<script>window.location.href='index.php'</script>";
 	if(!empty($result)) { 
 		foreach($result as $row) {
 	?>
-<a href="article-view.php?id=<?php echo $row['topic'];?>">
+<a href="article-view.php?id=<?php echo $row['id'];?>">
 <div class="card" >
   <div class="container">
-		<h3><?php echo $row['topic']; ?></h3>
+		<h3><?php echo $row['field1']; ?></h3>
 		<p>Author: <?php echo $row['field2']; ?></p>
 		<p><?php echo $row['field3']; ?></p>
 </div>
@@ -95,4 +108,10 @@ echo "<script>window.location.href='index.php'</script>";
 	?>
 
 <?php echo $per_page_html; ?>
+</div>
+</div>
+<?php include("settings/footer.php"); ?>
+</div>
+</body>
+</html>
 
