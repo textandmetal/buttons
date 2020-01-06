@@ -7,26 +7,13 @@ if(isset($_POST['update']))
 $userid=intval($_GET['id']);
 // Posted Values  
 
-$field2=$_POST['field2'];
-$field3=$_POST['field3'];
-$field4=$_POST['field4'];
-$field5=$_POST['field5'];
-$field6=$_POST['field6'];
-$field7=$_POST['field7'];
-$field8=$_POST['field8'];
-$field9=$_POST['field9'];
-$field10=$_POST['field10'];
+$type=$_POST['type'];
 // Query for Query for Updation
-$sql="update articles set field2=:f2,field3=:f3,field4=:f4,field5=:f5,field6=:f6,field7=:f7,field8=:f8,field9=:f9,field10=:f10 where id=:uid";
+$sql="update articles set type=:ty where id=:uid";
 //Prepare Query for Execution
 $query = $dbh->prepare($sql);
 // Bind the parameters
-$query->bindParam(':f2',$field2,PDO::PARAM_STR);
-$query->bindParam(':f3',$field3,PDO::PARAM_STR);
-$query->bindParam(':f4',$field4,PDO::PARAM_STR);
-$query->bindParam(':f5',$field5,PDO::PARAM_STR);
-$query->bindParam(':f6',$field6,PDO::PARAM_STR);
-$query->bindParam(':f7',$field7,PDO::PARAM_STR);
+$query->bindParam(':ty',$type,PDO::PARAM_STR);
 $query->bindParam(':uid',$userid,PDO::PARAM_STR);
 // Query Execution
 $query->execute();
@@ -42,7 +29,7 @@ echo "<script>window.location.href='index.php'</script>";
 <?php 
 // Get the userid
 $userid=intval($_GET['id']);
-$sql = "SELECT field2,field3,field4,field5,field6,field7,id from articles where id=:uid";
+$sql = "SELECT type from topics where id=:uid";
 //Prepare the query:
 $query = $dbh->prepare($sql);
 //Bind the parameters
@@ -60,10 +47,7 @@ foreach($results as $result)
 {               
 ?>
 
-<h1><a href="article-search.php"><?php echo htmlentities($result->field2);?></a></h1>
-<p>By <?php echo htmlentities($result->field3);?></p>
-<p><?php echo htmlentities($result->field4);?></p>
-<p><?php echo htmlentities($result->field5);?></p>
+<h1><a href="article-search.php"><?php echo htmlentities($result->topic);?></a></h1>
 <form>
 
 <p>id: <?php echo htmlentities($result->id);?></p>
