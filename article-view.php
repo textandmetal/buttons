@@ -58,6 +58,7 @@ if($query->rowCount() > 0)
 foreach($results as $result)
 {               
 ?>
+							<a href="/article-view.php?id=<?php echo $row['id'];?>" class="button big wide smooth-scroll-middle"><?php echo $row['field2'];?></a>
 <a href="/"><?php echo htmlentities($result->field2);?></a>
 <?php }} ?>
 
