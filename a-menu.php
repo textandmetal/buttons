@@ -1,72 +1,85 @@
 <?php
+define("ROW_PER_PAGE",2);
 // include database connection file
-require_once'dbconfig.php';
-if(isset($_POST['update']))
+include("dbconfig.php");
+?>
+<?php
+	$database_username = 'root';
+	$database_password = 'GreenJeans33Winter1@';
+	$pdo_conn = new PDO( 'mysql:host=localhost;dbname=buttons', $database_username, $database_password );
+?>
+<?php 
+// Code for record deletion
+if(isset($_REQUEST['del']))
 {
-// Get the userid
-$userid=intval($_GET['id']);
-// Posted Values  
-
-$field2=$_POST['field2'];
-$field3=$_POST['field3'];
-$field4=$_POST['field4'];
-$field5=$_POST['field5'];
-$field6=$_POST['field6'];
-$field7=$_POST['field7'];
-$field8=$_POST['field8'];
-$field9=$_POST['field9'];
-$field10=$_POST['field10'];
-// Query for Query for Updation
-$sql="update articles set field2=:f2,field3=:f3,field4=:f4,field5=:f5,field6=:f6,field7=:f7,field8=:f8,field9=:f9,field10=:f10 where id=:uid";
-//Prepare Query for Execution
+//Get row id
+$uid=intval($_GET['del']);
+//Qyery for deletion
+$sql = "delete from articles WHERE  id=:id";
+// Prepare query for execution
 $query = $dbh->prepare($sql);
-// Bind the parameters
-$query->bindParam(':f2',$field2,PDO::PARAM_STR);
-$query->bindParam(':f3',$field3,PDO::PARAM_STR);
-$query->bindParam(':f4',$field4,PDO::PARAM_STR);
-$query->bindParam(':f5',$field5,PDO::PARAM_STR);
-$query->bindParam(':f6',$field6,PDO::PARAM_STR);
-$query->bindParam(':f7',$field7,PDO::PARAM_STR);
-$query->bindParam(':uid',$userid,PDO::PARAM_STR);
+// bind the parameters
+$query-> bindParam(':id',$uid, PDO::PARAM_STR);
 // Query Execution
-$query->execute();
+$query -> execute();
 // Mesage after updation
-echo "<script>alert('Record Updated successfully');</script>";
+echo "<script>alert('Record Deleted successfully');</script>";
 // Code for redirection
 echo "<script>window.location.href='index.php'</script>"; 
 }
 ?>
+<?php	
+	$search_keyword = '';
+	if(!empty($_POST['search']['keyword'])) {
+		$search_keyword = $_POST['search']['keyword'];
+	}
+	$sql = 'SELECT * FROM articles WHERE topic LIKE :keyword  ORDER BY id DESC ';
+	
+	/* Pagination Code starts 
+	$per_page_html = '';
+	$page = 1;
+	$start=0;
+	if(!empty($_POST["page"])) {
+		$page = $_POST["page"];
+		$start=($page-1) * ROW_PER_PAGE;
+	}
+	$limit=" limit " . $start . "," . ROW_PER_PAGE;
+	$pagination_statement = $pdo_conn->prepare($sql);
+	$pagination_statement->bindValue(':keyword', '%' . $search_keyword . '%', PDO::PARAM_STR);
+	$pagination_statement->execute();
 
-
-
-<?php 
-// Get the userid
-$userid=intval($_GET['id']);
-$sql = "SELECT field2,field3,field4,field5,field6,field7,id from articles where id=:uid";
-//Prepare the query:
-$query = $dbh->prepare($sql);
-//Bind the parameters
-$query->bindParam(':uid',$userid,PDO::PARAM_STR);
-//Execute the query:
-$query->execute();
-//Assign the data which you pulled from the database (in the preceding step) to a variable.
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-// For serial number initialization
-$cnt=1;
-if($query->rowCount() > 0)
-{
-//In case that the query returned at least one record, we can echo the records within a foreach loop:
-foreach($results as $result)
-{               
+	$row_count = $pagination_statement->rowCount();
+	if(!empty($row_count)){
+		$per_page_html .= "<div style='text-align:center;margin:20px 0px;'>";
+		$page_count=ceil($row_count/ROW_PER_PAGE);
+		if($page_count>1) {
+			for($i=1;$i<=$page_count;$i++){
+				if($i==$page){
+					$per_page_html .= '<input type="submit" name="page" value="' . $i . '" class="btn-page current" />';
+				} else {
+					$per_page_html .= '<input type="submit" name="page" value="' . $i . '" class="btn-page" />';
+				}
+			}
+		}
+		$per_page_html .= "</div>";
+	}*/
+	
+	$query = $sql.$limit;
+	$pdo_statement = $pdo_conn->prepare($query);
+	$pdo_statement->bindValue(':keyword', '%' . $search_keyword . '%', PDO::PARAM_STR);
+	$pdo_statement->execute();
+	$result = $pdo_statement->fetchAll();
 ?>
+	<?php
+	if(!empty($result)) { 
+		foreach($result as $row) {
+	?>
+<a href="article-view.php?id=<?php echo $row['id'];?>"><?php echo $row['field2']; ?></a>
 
-<h1><a href="article-search.php"><?php echo htmlentities($result->field2);?></a></h1>
-<p>By <?php echo htmlentities($result->field3);?></p>
-<p><?php echo htmlentities($result->field4);?></p>
-<p><?php echo htmlentities($result->field5);?></p>
-<form>
+    <?php
+		}
+	}
+	?>
 
-<p>id: <?php echo htmlentities($result->id);?></p>
-<form name="insertrecord" method="post">
-     </form>
-<?php }} ?>
+<?php echo $per_page_html; ?>
+
