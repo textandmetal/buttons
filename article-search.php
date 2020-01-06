@@ -70,7 +70,6 @@ echo "<script>window.location.href='index.php'</script>";
 	$pdo_statement->execute();
 	$result = $pdo_statement->fetchAll();
 ?>
-<?php include("settings/settings.php"); ?>
 <form style="margin:auto" name='frmSearch' action='' method='post'>
 <div style='text-align:left;margin:5px 0px;'><input type='text' name='search[keyword]' value="<?php echo $search_keyword; ?>" id='keyword' maxlength='25'></div>
 <a href=""><button class="btn btn-primary"> Search</button></a>
