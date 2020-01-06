@@ -5,8 +5,8 @@ include("dbconfig.php");
 ?>
 <?php
 	$database_username = 'root';
-	$database_password = 'greenjeans33';
-	$pdo_conn = new PDO( 'mysql:host=localhost;dbname=EXAMPLE', $database_username, $database_password );
+	$database_password = 'GreenJeans33Winter1@';
+	$pdo_conn = new PDO( 'mysql:host=localhost;dbname=buttons', $database_username, $database_password );
 ?>
 <?php 
 // Code for record deletion
@@ -15,7 +15,7 @@ if(isset($_REQUEST['del']))
 //Get row id
 $uid=intval($_GET['del']);
 //Qyery for deletion
-$sql = "delete from example WHERE  id=:id";
+$sql = "delete from articles WHERE  id=:id";
 // Prepare query for execution
 $query = $dbh->prepare($sql);
 // bind the parameters
@@ -33,7 +33,7 @@ echo "<script>window.location.href='index.php'</script>";
 	if(!empty($_POST['search']['keyword'])) {
 		$search_keyword = $_POST['search']['keyword'];
 	}
-	$sql = 'SELECT * FROM example WHERE id LIKE :keyword OR field1 LIKE :keyword OR field2 LIKE :keyword OR field3 LIKE :keyword OR field4 LIKE :keyword OR field4 LIKE :keyword OR field5 LIKE :keyword OR field6 LIKE :keyword OR field7 LIKE :keyword OR field8 LIKE :keyword OR field9 LIKE :keyword OR field10 LIKE :keyword ORDER BY id DESC ';
+	$sql = 'SELECT * FROM articles WHERE id LIKE :keyword OR field1 LIKE :keyword OR field2 LIKE :keyword OR field3 LIKE :keyword OR field4 LIKE :keyword OR field4 LIKE :keyword OR field5 LIKE :keyword OR field6 LIKE :keyword OR field7 LIKE :keyword OR field8 LIKE :keyword OR field9 LIKE :keyword OR field10 LIKE :keyword ORDER BY id DESC ';
 	
 	/* Pagination Code starts 
 	$per_page_html = '';
