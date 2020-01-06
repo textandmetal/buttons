@@ -31,7 +31,7 @@ foreach($results as $result)
 // This is the second loop in the code
 // Get the userid
 $userid=intval($_GET['id']);
-$sql1 = "SELECT field2 from articles where topic=:uid";
+$sql1 = "SELECT field2 from articles where topic=<?php echo htmlentities($result->type);?>";
 //Prepare the query:
 $query = $dbh->prepare($sql1);
 //Bind the parameters
