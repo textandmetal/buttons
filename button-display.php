@@ -61,18 +61,12 @@ include("dbconfig.php");
 		foreach($result as $row) {
 	?>
 <a href="article-view.php?id=<?php echo $row['id'];?>">
-<div class="card" >
-  <div class="container">
 		<h3><?php echo $row['topic']; ?></h3>
-		<p>Author: <?php echo $row['field2']; ?></p>
-		<p><?php echo $row['field3']; ?></p>
-</div>
-</div>
 
     <?php
 		}
 	}
 	?>
-
+</div>
 <?php echo $per_page_html; ?>
 
