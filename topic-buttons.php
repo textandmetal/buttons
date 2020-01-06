@@ -13,7 +13,7 @@ include("dbconfig.php");
 	if(!empty($_POST['search']['keyword'])) {
 		$search_keyword = $_POST['search']['keyword'];
 	}
-	$sql = 'SELECT * FROM articles WHERE type Vim  ORDER BY id ASC ';
+	$sql = 'SELECT * FROM articles WHERE type = Vim  ORDER BY id ASC ';
 	
 	
 	$query = $sql.$limit;
