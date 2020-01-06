@@ -33,7 +33,7 @@ echo "<script>window.location.href='index.php'</script>";
 	if(!empty($_POST['search']['keyword'])) {
 		$search_keyword = $_POST['search']['keyword'];
 	}
-	$sql = 'SELECT * FROM articles WHERE id LIKE :keyword OR field1 LIKE :keyword OR field2 LIKE :keyword OR field3 LIKE :keyword OR field4 LIKE :keyword OR field4 LIKE :keyword OR field5 LIKE :keyword OR field6 LIKE :keyword OR field7 LIKE :keyword ORDER BY id DESC ';
+	$sql = 'SELECT * FROM articles WHERE topic LIKE :keyword  ORDER BY id DESC ';
 	
 	/* Pagination Code starts 
 	$per_page_html = '';
