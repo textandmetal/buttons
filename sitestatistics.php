@@ -25,6 +25,10 @@ body{width:615px;font-family:arial;letter-spacing:1px;line-height:20px;}
 <h3><a href="admin.php">admin</a></h3> 
 <p>PHP CRUDVS Admin Operations using PDO Extension</p>
 <p><a href="settings.php">Settings</a> | <a href="articles.php">Articles</a> | <a href="Users">Users</a> | <a href="pagestatistics.php">Site Statistics</a></p>
+<?php include("analytics/pageviews.php"); ?><br>
+<?php include("analytics/individualviews.php"); ?><br>
+<?php include("analytics/aboutviews.php"); ?><br>
+<?php include("analytics/articleviews.php"); ?><br>
 <a href="add-tool-to-inventory.php"><button class="btn btn-primary"> Add Article</button></a>
 
 <hr />
@@ -33,7 +37,7 @@ body{width:615px;font-family:arial;letter-spacing:1px;line-height:20px;}
 	if(!empty($_POST['search']['keyword'])) {
 		$search_keyword = $_POST['search']['keyword'];
 	}
-	$sql = 'SELECT * FROM articles WHERE topic LIKE :keyword OR topicname LIKE :keyword OR field2 LIKE :keyword OR field3 LIKE :keyword OR field4 LIKE :keyword ORDER BY id DESC LIMIT 10';
+	$sql = 'SELECT * FROM analytics WHERE pageurl LIKE :keyword OR urlquery LIKE :keyword OR userip LIKE :keyword OR useragent LIKE :keyword OR timestamp LIKE :keyword ORDER BY id DESC LIMIT 1';
 	
 	/* Pagination Code starts 
 	$per_page_html = '';
@@ -78,12 +82,11 @@ body{width:615px;font-family:arial;letter-spacing:1px;line-height:20px;}
 <table id="mytable" class="table table-bordred table-striped" style="font-size:0.8em;">                 
 <thead>
 	<tr>
-	  <th class='table-header' width='5%'>id</th>
-	  <th class='table-header' width='5%'>Topic</th>
-	  <th class='table-header' width='5%'>Title</th>
-	  <th class='table-header' width='25%'>Byline</th>
-	  <th class='table-header' width='10%'>Author</th>
-	  <th class='table-header' width='5%'>Written</th>
+	  <th class='table-header' width='10%'>Page URL</th>
+	  <th class='table-header' width='5%'>URL Query</th>
+	  <th class='table-header' width='10%'>User IP</th>
+	  <th class='table-header' width='25%'>User Agent</th>
+	  <th class='table-header' width='5%'>Timestamp</th>
 	  <th class='table-header' width='3%'></th>
 	  <th class='table-header' width='3%'></th>
 	  <th class='table-header' width='3%'>Delete</th>
@@ -95,14 +98,13 @@ body{width:615px;font-family:arial;letter-spacing:1px;line-height:20px;}
 		foreach($result as $row) {
 	?>
 	  <tr class='table-row'>
-		<td><?php echo $row['id']; ?></td>
-		<td><?php echo $row['topicname']; ?></td>
-		<td><?php echo $row['field2']; ?></td>
-		<td><?php echo $row['field3']; ?></td>
-		<td><?php echo $row['field4']; ?></td>
-		<td><?php echo $row['field5']; ?></td>
-		<td><a href="article.php?id=<?php echo $row['id'];?>">View</a></td>
-    		<td><a href="update-article.php?id=<?php echo $row['id'];?>">Update</a></td>
+		<td><?php echo $row['pageurl']; ?></td>
+		<td><?php echo $row['urlquery']; ?></td>
+		<td><?php echo $row['userip']; ?></td>
+		<td><?php echo $row['useragent']; ?></td>
+		<td><?php echo $row['timestamp']; ?></td>
+		<td><a href="view-tool.php?id=<?php echo $row['id'];?>">View</a></td>
+    		<td><a href="update-tool.php?id=<?php echo $row['id'];?>">Update</a></td>
     		<td><a href="index.php?del=<?php echo $row['id'];?>"><button class="btn btn-danger btn-xs" onClick="return confirm('Do you really want to delete');"><span class="glyphicon glyphicon-trash"></span></button></a></td>
 	  </tr>
     <?php
