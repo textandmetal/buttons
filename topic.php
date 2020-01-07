@@ -22,7 +22,7 @@ if($query->rowCount() > 0)
 foreach($results as $result)
 {               
 ?>
-		<?php include 'php/head.html'; ?>
+<?php include 'php/head.html'; ?>
 	<body>
 
 		<!-- Wrapper -->
