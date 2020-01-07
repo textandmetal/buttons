@@ -64,23 +64,16 @@ foreach($results as $result)
 
 
 <?php }} ?>
-<br>
 
-						
+<br>
+<br>
 					<p><a href="articles/about.php" class="button big wide smooth-scroll-middle">About</a></p>
-						</div>
+			</div>
 					<!--	<div class="image">
 							<img src="images/thinkpad.png" alt="" />
 						</div> -->
 					</section>
-
-
-
-	
-				
 			</div>
-
-
 
 	</body>
 </html>
