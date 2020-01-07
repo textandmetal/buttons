@@ -34,12 +34,9 @@ try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "INSERT INTO pageviews (url)
-    VALUES ('$url')";
     // use exec() because no results are returned
-    $conn->exec($sql);
-    $sql2 = "UPDATE numberofviews SET numberofviews = numberofviews + 1";
-    $conn->exec($sql);
+    $sql2 = "UPDATE numberofviews SET numberofviews = numberofviews + 1 where url = $url";
+    $conn->exec($sql2;
     }
 catch(PDOException $e)
     {
