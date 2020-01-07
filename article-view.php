@@ -36,7 +36,7 @@ echo "<script>window.location.href='index.php'</script>";
 
 
 
-		<?php include '../php/head.html'; ?>
+		<?php include 'php/head.html'; ?>
 	<body>
 
 		<!-- Wrapper -->
