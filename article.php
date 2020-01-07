@@ -6,7 +6,7 @@ require_once'dbconfig.php';
 if(isset($_POST['update']))
 {
 // Get the userid
-$userid=intval($_GET['id']);
+$userid=intval($_GET['field2']);
 // Posted Values  
 
 $field2=$_POST['field2'];
