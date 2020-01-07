@@ -36,7 +36,7 @@ body{width:615px;font-family:arial;letter-spacing:1px;line-height:20px;}
 	if(!empty($_POST['search']['keyword'])) {
 		$search_keyword = $_POST['search']['keyword'];
 	}
-	$sql = 'SELECT * FROM articles WHERE topic LIKE :keyword OR field2 LIKE :keyword OR field3 LIKE :keyword OR field4 LIKE :keyword ORDER BY id DESC LIMIT 10';
+	$sql = 'SELECT * FROM articles WHERE topic LIKE :keyword OR topicname LIKE :keyword OR field2 LIKE :keyword OR field3 LIKE :keyword OR field4 LIKE :keyword ORDER BY id DESC LIMIT 10';
 	
 	/* Pagination Code starts 
 	$per_page_html = '';
@@ -82,9 +82,10 @@ body{width:615px;font-family:arial;letter-spacing:1px;line-height:20px;}
 <thead>
 	<tr>
 	  <th class='table-header' width='5%'>id</th>
+	  <th class='table-header' width='5%'>Topic</th>
 	  <th class='table-header' width='5%'>Title</th>
-	  <th class='table-header' width='10%'>Byline</th>
-	  <th class='table-header' width='25%'>Author</th>
+	  <th class='table-header' width='25%'>Byline</th>
+	  <th class='table-header' width='10%'>Author</th>
 	  <th class='table-header' width='5%'>Written</th>
 	  <th class='table-header' width='3%'></th>
 	  <th class='table-header' width='3%'></th>
@@ -98,6 +99,7 @@ body{width:615px;font-family:arial;letter-spacing:1px;line-height:20px;}
 	?>
 	  <tr class='table-row'>
 		<td><?php echo $row['id']; ?></td>
+		<td><?php echo $row['topicname']; ?></td>
 		<td><?php echo $row['field2']; ?></td>
 		<td><?php echo $row['field3']; ?></td>
 		<td><?php echo $row['field4']; ?></td>
