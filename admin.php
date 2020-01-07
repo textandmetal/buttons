@@ -74,7 +74,7 @@ body{width:615px;font-family:arial;letter-spacing:1px;line-height:20px;}
 <a href=""><button class="btn btn-primary"> Search</button></a>
 <br>
 <div class="table-responsive">                
-<table id="mytable" class="table table-bordred table-striped">                 
+<table id="mytable" class="table table-bordred table-striped" style="font-size:0.8em;">                 
 <thead>
 	<tr>
 	  <th class='table-header' width='10%'>Page URL</th>
