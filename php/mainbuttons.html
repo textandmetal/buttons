@@ -2,6 +2,7 @@
 // include database connection file
 include("dbconfig.php");
 ?>
+                            <p>
 <?php
 	$database_username = 'root';
 	$database_password = 'GreenJeans33Winter1@';
@@ -19,7 +20,6 @@ include("dbconfig.php");
 	$pdo_statement->execute();
 	$result = $pdo_statement->fetchAll();
 ?>
-                            <p>
 	<?php
 	if(!empty($result)) { 
 		foreach($result as $row) {
