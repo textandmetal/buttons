@@ -1,4 +1,4 @@
-		<?php include '../php/head.html'; ?>
+		<?php include 'php/head.html'; ?>
 	<body>
 
 		<!-- Wrapper -->
@@ -13,9 +13,6 @@
 
 
 							<p>This is a simple map to our website, like the contents of a book this page lists all the articles written in this format.</p>
-							<p>The Built Environment is an exciting discipline to be a be working as
-                            a professional, with the right resources and tools you can play an
-                            integral part of the development and creation of infrastructure. Check out our <a href="../submenus/google.php">Google</a> page and out <a href="../submenus/linux.php">Linux</a> page for technology and building.</p>
 
 
 <header><h3>Construction Management</h3></header>

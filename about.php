@@ -1,4 +1,4 @@
-		<?php include '../php/head.html'; ?>
+		<?php include 'php/head.html'; ?>
 	<body>
 
 		<!-- Wrapper -->
