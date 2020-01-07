@@ -36,7 +36,7 @@ body{width:615px;font-family:arial;letter-spacing:1px;line-height:20px;}
 	if(!empty($_POST['search']['keyword'])) {
 		$search_keyword = $_POST['search']['keyword'];
 	}
-	$sql = 'SELECT * FROM articles WHERE topic LIKE :keyword OR field2 LIKE :keyword OR field3 LIKE :keyword OR field3 LIKE :keyword OR ORDER BY id DESC LIMIT 10';
+	$sql = 'SELECT * FROM articles WHERE topic LIKE :keyword OR field2 LIKE :keyword OR field3 LIKE :keyword OR field4 LIKE :keyword ORDER BY id DESC LIMIT 10';
 	
 	/* Pagination Code starts 
 	$per_page_html = '';
