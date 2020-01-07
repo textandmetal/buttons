@@ -13,8 +13,6 @@ include("dbconfig.php");
 		$search_keyword = $_POST['search']['keyword'];
 	}
 	$sql = 'SELECT * FROM topics WHERE type LIKE :keyword  ORDER BY id ASC ';
-	
-	
 	$query = $sql.$limit;
 	$pdo_statement = $pdo_conn->prepare($query);
 	$pdo_statement->bindValue(':keyword', '%' . $search_keyword . '%', PDO::PARAM_STR);
