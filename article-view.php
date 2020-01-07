@@ -39,7 +39,7 @@ echo "<script>window.location.href='index.php'</script>";
 <?php 
 // Get the userid
 $userid=intval($_GET['id']);
-$sql = "SELECT field2,field3,field4,field5,field6,field7,id from articles where id=:uid";
+$sql = "SELECT type,field2,field3,field4,field5,field6,field7,id from articles where id=:uid";
 //Prepare the query:
 $query = $dbh->prepare($sql);
 //Bind the parameters
