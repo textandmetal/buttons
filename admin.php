@@ -34,7 +34,7 @@ body{width:615px;font-family:arial;letter-spacing:1px;line-height:20px;}
 	}
 	$sql = 'SELECT * FROM analytics WHERE pageurl LIKE :keyword OR urlquery LIKE :keyword OR userip LIKE :keyword OR useragent LIKE :keyword OR timestamp LIKE :keyword ORDER BY id DESC ';
 	
-	 Pagination Code starts 
+	/* Pagination Code starts 
 	$per_page_html = '';
 	$page = 1;
 	$start=0;
@@ -61,7 +61,7 @@ body{width:615px;font-family:arial;letter-spacing:1px;line-height:20px;}
 			}
 		}
 		$per_page_html .= "</div>";
-	}
+	}*/
 	
 	$query = $sql.$limit;
 	$pdo_statement = $pdo_conn->prepare($query);
@@ -81,10 +81,10 @@ body{width:615px;font-family:arial;letter-spacing:1px;line-height:20px;}
 	  <th class='table-header' width='5%'>URL Query</th>
 	  <th class='table-header' width='10%'>User IP</th>
 	  <th class='table-header' width='25%'>User Agent</th>
-	  <th class='table-header' width='10%'>Timestamp</th>
-	  <th class='table-header' width='3%'></th>
-	  <th class='table-header' width='3%'></th>
-	  <th class='table-header' width='3%'>Delete</th>
+	  <th class='table-header' width='5%'>Timestamp</th>
+	  <th class='table-header' width='5%'></th>
+	  <th class='table-header' width='5%'></th>
+	  <th class='table-header' width='5%'>Delete</th>
 	</tr>
   </thead>
   <tbody id='table-body'>
