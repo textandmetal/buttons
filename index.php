@@ -1,5 +1,5 @@
 <?php include 'php/head.html'; ?>
-	<body>
+<body>
 
 		<!-- Wrapper -->
 			<div id="wrapper" class="divided">
