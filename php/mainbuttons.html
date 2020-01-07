@@ -21,7 +21,7 @@ include("dbconfig.php");
 	$pdo_statement->execute();
 	$result = $pdo_statement->fetchAll();
 ?>
-<p>
+                            <p>
 	<?php
 	if(!empty($result)) { 
 		foreach($result as $row) {
@@ -31,6 +31,6 @@ include("dbconfig.php");
 		}
 	}
 	?>
-</p>
+                            </p>
 <br>
 <?php include("php/about-button.php"); ?>						
