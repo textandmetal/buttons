@@ -6,7 +6,7 @@ require_once'dbconfig.php';
 if(isset($_POST['update']))
 {
 // Get the userid
-$userid=intval($_GET['field2']);
+$userid=intval($_GET['id']);
 // Posted Values  
 
 $field2=$_POST['field2'];
@@ -16,7 +16,7 @@ $field5=$_POST['field5'];
 $field6=$_POST['field6'];
 $field7=$_POST['field7'];
 // Query for Query for Updation
-$sql="update articles set field2=:f2,field3=:f3,field4=:f4,field5=:f5,field6=:f6,field7=:f7 where field2=:uid";
+$sql="update articles set field2=:f2,field3=:f3,field4=:f4,field5=:f5,field6=:f6,field7=:f7 where id=:uid";
 //Prepare Query for Execution
 $query = $dbh->prepare($sql);
 // Bind the parameters
@@ -45,7 +45,7 @@ echo "<script>window.location.href='index.php'</script>";
 <?php 
 // Get the userid
 $userid=intval($_GET['id']);
-$sql = "SELECT topic,field2,field3,field4,field5,field6,field7,id from articles where field2=:uid";
+$sql = "SELECT topic,field2,field3,field4,field5,field6,field7,id from articles where id=:uid";
 //Prepare the query:
 $query = $dbh->prepare($sql);
 //Bind the parameters
