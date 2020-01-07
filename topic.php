@@ -41,7 +41,7 @@ foreach($results as $result)
 // This is the second loop in the code
 // Get the userid
 $userid=intval($_GET['id']);
-$sql1 = "SELECT field2 from articles where topic=:uid";
+$sql1 = "SELECT field2,id from articles where topic=:uid";
 //Prepare the query:
 $query = $dbh->prepare($sql1);
 //Bind the parameters
@@ -58,7 +58,7 @@ if($query->rowCount() > 0)
 foreach($results as $result)
 {               
 ?>
-							<a href="/article-view.php?id=<?php echo htmlentities($result->field2);?>" class="button big wide smooth-scroll-middle"><?php echo htmlentities($result->id);?><?php echo htmlentities($result->field2);?></a>
+							<a href="/article-view.php?id=<?php echo htmlentities($result->id);?>" class="button big wide smooth-scroll-middle"><?php echo htmlentities($result->field2);?></a>
 <?php }} ?>
 
 
