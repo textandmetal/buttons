@@ -99,7 +99,7 @@ body{width:615px;font-family:arial;letter-spacing:1px;line-height:20px;}
 		<td><?php echo $row['field3']; ?></td>
 		<td><?php echo $row['field4']; ?></td>
 		<td><?php echo $row['field5']; ?></td>
-		<td><a href="article.php?id=<?php echo $row['id'];?>">View</a></td>
+		<td><a href="../article.php?id=<?php echo $row['id'];?>">View</a></td>
     		<td><a href="update-article.php?id=<?php echo $row['id'];?>">Update</a></td>
     		<td><a href="index.php?del=<?php echo $row['id'];?>"><button class="btn btn-danger btn-xs" onClick="return confirm('Do you really want to delete');"><span class="glyphicon glyphicon-trash"></span></button></a></td>
 	  </tr>
