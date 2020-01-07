@@ -8,7 +8,7 @@ require_once'dbconfig.php';
 <?php 
 // Get the userid
 $userid=intval($_GET['id']);
-$sql = "SELECT type from topics where id=:uid";
+$sql = "SELECT byline,type from topics where id=:uid";
 //Prepare the query:
 $query = $dbh->prepare($sql);
 //Bind the parameters
