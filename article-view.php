@@ -66,8 +66,8 @@ foreach($results as $result)
 {               
 ?>
 <h1><a href="topic.php?id=<?php echo htmlentities($result->topic);?>"><?php echo htmlentities($result->field2);?></a></h1>
-<p>Author: <?php echo htmlentities($result->field3);?></p>
-<p><?php echo htmlentities($result->field4);?></p>
+<p><?php echo htmlentities($result->field3);?></p>
+<p>Author: <?php echo htmlentities($result->field4);?></p>
 <p><?php echo htmlentities($result->field5);?></p>
 <form>
 
