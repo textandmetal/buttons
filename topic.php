@@ -62,12 +62,12 @@ foreach($results as $result)
 							<a href="/article-view.php?id=<?php echo htmlentities($result->id);?>" class="button big wide smooth-scroll-middle"><?php echo htmlentities($result->field2);?></a>
 <?php }} ?>
 
+
+<?php }} ?>
 <br>
 
 						
 					<p><a href="articles/about.php" class="button big wide smooth-scroll-middle">About</a></p>
-
-<?php }} ?>
 						</div>
 					<!--	<div class="image">
 							<img src="images/thinkpad.png" alt="" />
