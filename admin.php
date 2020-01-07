@@ -35,7 +35,7 @@ body{width:615px;font-family:arial;letter-spacing:1px;line-height:20px;}
 	if(!empty($_POST['search']['keyword'])) {
 		$search_keyword = $_POST['search']['keyword'];
 	}
-	$sql = 'SELECT * FROM analytics WHERE pageurl LIKE :keyword OR urlquery LIKE :keyword OR userip LIKE :keyword OR useragent LIKE :keyword OR timestamp LIKE :keyword ORDER BY id DESC ';
+	$sql = 'SELECT * FROM analytics WHERE pageurl LIKE :keyword OR urlquery LIKE :keyword OR userip LIKE :keyword OR useragent LIKE :keyword OR timestamp LIKE :keyword ORDER BY id DESC LIMIT 10';
 	
 	/* Pagination Code starts 
 	$per_page_html = '';
