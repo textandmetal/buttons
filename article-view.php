@@ -36,6 +36,15 @@ echo "<script>window.location.href='index.php'</script>";
 
 
 
+		<?php include '../php/head.html'; ?>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="divided">
+
+				<!-- Banner -->
+					<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+						<div class="content">
 <?php 
 // Get the userid
 $userid=intval($_GET['id']);
@@ -56,10 +65,6 @@ if($query->rowCount() > 0)
 foreach($results as $result)
 {               
 ?>
-<div class="container">
-
-<div class="row">
-<div class="col-md-12">
 <h1><a href="topic.php?id=<?php echo htmlentities($result->topic);?>"><?php echo htmlentities($result->field2);?></a></h1>
 <p>By <?php echo htmlentities($result->field3);?></p>
 <p><?php echo htmlentities($result->field4);?></p>
@@ -67,8 +72,9 @@ foreach($results as $result)
 <form>
 
 <p>id: <?php echo htmlentities($result->id);?></p>
-<form name="insertrecord" method="post">
-     </form>
-	</div>
-</div>
 <?php }} ?>
+						</div>
+					</section>
+
+	</body>
+</html>
