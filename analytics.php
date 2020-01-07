@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "greenjeans33";
+$password = "GreenJeans33Winter1@";
 $dbname = "buttons";
 $pageurl = $_SERVER['REQUEST_URI'];
 $userip = $_SERVER['REMOTE_ADDR'];
