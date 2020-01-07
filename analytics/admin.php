@@ -23,7 +23,6 @@ body{width:615px;font-family:arial;letter-spacing:1px;line-height:20px;}
 <div class="row">
 <div class="col-md-12">
 <?php include("nav.php"); ?>
-<a href="add-tool-to-inventory.php"><button class="btn btn-primary"> Add Article</button></a>
 
 <hr />
 <?php	
