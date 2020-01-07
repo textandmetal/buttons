@@ -1,4 +1,3 @@
-<?php include 'php/head.html'; ?>
 <body>
 <?php
 // include database connection file
