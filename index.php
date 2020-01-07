@@ -30,7 +30,6 @@
 			</div>
 
 
-		<?php include 'php/scripts.html'; ?>
 
 	</body>
 </html>

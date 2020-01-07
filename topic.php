@@ -81,7 +81,6 @@ foreach($results as $result)
 			</div>
 
 
-		<?php include 'php/scripts.html'; ?>
 
 	</body>
 </html>
