@@ -34,17 +34,17 @@ echo "<script>window.location.href='index.php'</script>";
 }
 ?>
 
+<?php include("../php/head.html"); ?>
 
-
-		<?php include 'php/head.html'; ?>
 	<body>
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="divided">
-
-				<!-- Banner -->
-					<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
-						<div class="content">
+				<!-- Additional Elements -->
+					<section class="wrapper style1 align-center">
+						<div class="inner">
+							<div class="index align-left">
+								<!-- Text -->
+									<section>
+										<div class="content">
 <?php 
 // Get the userid
 $userid=intval($_GET['id']);
@@ -65,14 +65,19 @@ if($query->rowCount() > 0)
 foreach($results as $result)
 {               
 ?>
+											<header>
 <h1><a href="topic.php?id=<?php echo htmlentities($result->topic);?>"><?php echo htmlentities($result->field2);?></a></h1>
 <p><?php echo htmlentities($result->field3);?></p>
+											</header>
 <p><?php echo nl2br("$result->field7");?></p>
 
 <p>Article id: <?php echo htmlentities($result->id);?><br>Author: <?php echo htmlentities($result->field4);?><br>Date: <?php echo htmlentities($result->field5);?></p>
 <?php }} ?>
+										</div>
+									</section>
+							</div>
 						</div>
 					</section>
-
+<?php include("../php/footer.html"); ?>
 	</body>
 </html>
