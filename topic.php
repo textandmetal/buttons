@@ -2,6 +2,7 @@
 // include database connection file
 require_once'dbconfig.php';
 ?>
+<?php include 'php/head.html'; ?>
 <?php 
 // Get the userid
 $userid=intval($_GET['id']);
@@ -22,7 +23,6 @@ if($query->rowCount() > 0)
 foreach($results as $result)
 {               
 ?>
-<?php include 'php/head.html'; ?>
 	<body>
 
 		<!-- Wrapper -->
