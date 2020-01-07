@@ -67,6 +67,7 @@ foreach($results as $result)
 
 <br>
 <br>
+<br>
 					<p><a href="articles/about.php" class="button big wide smooth-scroll-middle">About</a></p>
 			</div>
 					<!--	<div class="image">
