@@ -58,7 +58,6 @@ foreach($results as $result)
 							<a href="/article-view.php?id=<?php echo htmlentities($result->id);?>" class="button big wide smooth-scroll-middle"><?php echo htmlentities($result->field2);?></a>
 <?php }} ?>
                             </p>
-
 <?php }} ?>
 <br>
 <?php include("php/about-button.php"); ?>						
