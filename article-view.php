@@ -1,6 +1,6 @@
 <?php
 // include database connection file
-require_once'config/dbconfig.php';
+require_once'dbconfig.php';
 if(isset($_POST['update']))
 {
 // Get the userid
