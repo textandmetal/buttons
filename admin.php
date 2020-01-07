@@ -1,6 +1,6 @@
 <?php
 define("ROW_PER_PAGE",2);
-require_once('db-analytics.php');
+require_once('dbconfig.php');
 ?>
 <html>
 <head>
