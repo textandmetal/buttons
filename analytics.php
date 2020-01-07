@@ -23,4 +23,25 @@ catch(PDOException $e)
     }
 $conn = null;
 ?> 
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "GreenJeans33Winter1@";
+$dbname = "buttons";
+$url = $_SERVER['REQUEST_URI'];
 
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    // set the PDO error mode to exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $sql = "INSERT INTO pageviews (url)
+    VALUES ('$url')";
+    // use exec() because no results are returned
+    $conn->exec($sql);
+    }
+catch(PDOException $e)
+    {
+    echo $sql . "<br>" . $e->getMessage();
+    }
+$conn = null;
+?> 
