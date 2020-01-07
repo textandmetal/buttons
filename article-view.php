@@ -17,7 +17,7 @@ $field8=$_POST['field8'];
 $field9=$_POST['field9'];
 $field10=$_POST['field10'];
 // Query for Query for Updation
-$sql="update example set field2=:f2,field3=:f3,field4=:f4,field5=:f5,field6=:f6,field7=:f7,field8=:f8,field9=:f9,field10=:f10 where id=:uid";
+$sql="update articles set field2=:f2,field3=:f3,field4=:f4,field5=:f5,field6=:f6,field7=:f7,field8=:f8,field9=:f9,field10=:f10 where id=:uid";
 //Prepare Query for Execution
 $query = $dbh->prepare($sql);
 // Bind the parameters
@@ -45,7 +45,7 @@ echo "<script>window.location.href='index.php'</script>";
 <?php 
 // Get the userid
 $userid=intval($_GET['id']);
-$sql = "SELECT field2,field3,field4,field5,field6,field7,field8,field9,field10,id from example where id=:uid";
+$sql = "SELECT field2,field3,field4,field5,field6,field7,field8,field9,field10,id from articles where id=:uid";
 //Prepare the query:
 $query = $dbh->prepare($sql);
 //Bind the parameters
@@ -69,7 +69,7 @@ foreach($results as $result)
 <h1><a href="article-search.php"><?php echo htmlentities($result->field2);?></a></h1>
 <p>By <?php echo htmlentities($result->field3);?></p>
 <p><?php echo htmlentities($result->field4);?></p>
-<p><?php echo htmlentities($result->field5);?></p>
+<p><?php echo htmlentities($result->field4);?></p>
 <form>
 
 <p>id: <?php echo htmlentities($result->id);?></p>
