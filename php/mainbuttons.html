@@ -23,7 +23,6 @@ include("dbconfig.php");
 	$result = $pdo_statement->fetchAll();
 ?>
 <p>
-<div class="table-responsive">                
 	<?php
 	if(!empty($result)) { 
 		foreach($result as $row) {
@@ -35,7 +34,6 @@ include("dbconfig.php");
 	}
 	?>
 </p>
-</div>
 <?php echo $per_page_html; ?>
 <br>
 
