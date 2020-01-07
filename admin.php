@@ -77,11 +77,11 @@ body{width:615px;font-family:arial;letter-spacing:1px;line-height:20px;}
 <table id="mytable" class="table table-bordred table-striped">                 
 <thead>
 	<tr>
-	  <th class='table-header' width='15%'>Brand</th>
-	  <th class='table-header' width='15%'>Model</th>
-	  <th class='table-header' width='15%'>Description</th>
-	  <th class='table-header' width='20%'>Serial</th>
-	  <th class='table-header' width='5%'>Tagged</th>
+	  <th class='table-header' width='10%'>Page URL</th>
+	  <th class='table-header' width='15%'>URL Query</th>
+	  <th class='table-header' width='10%'>User IP</th>
+	  <th class='table-header' width='20%'>User Agent</th>
+	  <th class='table-header' width='5%'>Timestamp</th>
 	  <th class='table-header' width='5%'></th>
 	  <th class='table-header' width='5%'></th>
 	  <th class='table-header' width='5%'>Delete</th>
