@@ -69,8 +69,7 @@ foreach($results as $result)
 <p><?php echo htmlentities($result->field3);?></p>
 <p><?php echo nl2br("$result->field7");?></p>
 
-<p>id: <?php echo htmlentities($result->id);?></p>
-<p>Author: <?php echo htmlentities($result->field4);?><br>Date: <?php echo htmlentities($result->field5);?></p>
+<p>Article id: <?php echo htmlentities($result->id);?><br>Author: <?php echo htmlentities($result->field4);?><br>Date: <?php echo htmlentities($result->field5);?></p>
 <?php }} ?>
 						</div>
 					</section>
