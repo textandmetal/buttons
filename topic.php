@@ -1,4 +1,5 @@
 <?php include 'php/head.html'; ?>
+<body>
 <?php
 // include database connection file
 require_once'dbconfig.php';
@@ -23,8 +24,6 @@ if($query->rowCount() > 0)
 foreach($results as $result)
 {               
 ?>
-	<body>
-
 		<!-- Wrapper -->
 			<div id="wrapper" class="divided">
 
