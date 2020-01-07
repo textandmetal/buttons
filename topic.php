@@ -37,6 +37,7 @@ foreach($results as $result)
 
 <h1><a href="/"><?php echo htmlentities($result->type);?></a></h1>
 <p class="major"><?php echo htmlentities($result->byline);?></p>
+<p>
 <?php
 // This is the second loop in the code
 // Get the userid
@@ -60,7 +61,7 @@ foreach($results as $result)
 ?>
 							<a href="/article-view.php?id=<?php echo htmlentities($result->id);?>" class="button big wide smooth-scroll-middle"><?php echo htmlentities($result->field2);?></a>
 <?php }} ?>
-
+</p>
 
 <?php }} ?>
 <br>
