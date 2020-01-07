@@ -82,9 +82,9 @@ body{width:615px;font-family:arial;letter-spacing:1px;line-height:20px;}
 	  <th class='table-header' width='10%'>User IP</th>
 	  <th class='table-header' width='25%'>User Agent</th>
 	  <th class='table-header' width='5%'>Timestamp</th>
-	  <th class='table-header' width='5%'></th>
-	  <th class='table-header' width='5%'></th>
-	  <th class='table-header' width='5%'>Delete</th>
+	  <th class='table-header' width='3%'></th>
+	  <th class='table-header' width='3%'></th>
+	  <th class='table-header' width='3%'>Delete</th>
 	</tr>
   </thead>
   <tbody id='table-body'>
