@@ -2,9 +2,6 @@
 // include database connection file
 require_once'dbconfig.php';
 ?>
-
-
-
 <?php 
 // Get the userid
 $userid=intval($_GET['id']);
@@ -34,10 +31,9 @@ foreach($results as $result)
 				<!-- Banner -->
 					<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
 						<div class="content">
-
-<h1><a href="/"><?php echo htmlentities($result->type);?></a></h1>
-<p class="major"><?php echo htmlentities($result->byline);?></p>
-<p>
+                            <h1><a href="/"><?php echo htmlentities($result->type);?></a></h1>
+                            <p class="major"><?php echo htmlentities($result->byline);?></p>
+                            <p>
 <?php
 // This is the second loop in the code
 // Get the userid
@@ -61,16 +57,16 @@ foreach($results as $result)
 ?>
 							<a href="/article-view.php?id=<?php echo htmlentities($result->id);?>" class="button big wide smooth-scroll-middle"><?php echo htmlentities($result->field2);?></a>
 <?php }} ?>
-</p>
+                            </p>
 
 <?php }} ?>
 <br>
 <br>
 <br>
 <?php include("php/about-button.php"); ?>						
-			</div>
+			            </div>  
 					</section>
-			</div>
+			    </div>
 		<?php include 'php/footer.html'; ?>
 	</body>
 </html>
