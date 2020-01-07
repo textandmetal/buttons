@@ -71,47 +71,11 @@ body{width:615px;font-family:arial;letter-spacing:1px;line-height:20px;}
 	$pdo_statement->execute();
 	$result = $pdo_statement->fetchAll();
 ?>
-<form name='frmSearch' action='' method='post'>
-<div style='text-align:left;margin:5px 0px;'><input type='text' name='search[keyword]' value="<?php echo $search_keyword; ?>" id='keyword' maxlength='25'></div>
-<a href=""><button class="btn btn-primary"> Search</button></a>
-<br>
-<div class="table-responsive">                
-<table id="mytable" class="table table-bordred table-striped" style="font-size:0.8em;">                 
-<thead>
-	<tr>
-	  <th class='table-header' width='10%'>Page URL</th>
-	  <th class='table-header' width='5%'>URL Query</th>
-	  <th class='table-header' width='10%'>User IP</th>
-	  <th class='table-header' width='25%'>User Agent</th>
-	  <th class='table-header' width='5%'>Timestamp</th>
-	  <th class='table-header' width='3%'></th>
-	  <th class='table-header' width='3%'></th>
-	  <th class='table-header' width='3%'>Delete</th>
-	</tr>
-  </thead>
-  <tbody id='table-body'>
-	<?php
-	if(!empty($result)) { 
-		foreach($result as $row) {
-	?>
-	  <tr class='table-row'>
-		<td><?php echo $row['pageurl']; ?></td>
-		<td><?php echo $row['urlquery']; ?></td>
-		<td><?php echo $row['userip']; ?></td>
-		<td><?php echo $row['useragent']; ?></td>
-		<td><?php echo $row['timestamp']; ?></td>
-		<td><a href="view-tool.php?id=<?php echo $row['id'];?>">View</a></td>
-    		<td><a href="update-tool.php?id=<?php echo $row['id'];?>">Update</a></td>
-    		<td><a href="index.php?del=<?php echo $row['id'];?>"><button class="btn btn-danger btn-xs" onClick="return confirm('Do you really want to delete');"><span class="glyphicon glyphicon-trash"></span></button></a></td>
-	  </tr>
     <?php
 		}
 	}
 	?>
-  </tbody>
-</table>
 <?php echo $per_page_html; ?>
-</form>
 </div>
 </div>
 </div>
