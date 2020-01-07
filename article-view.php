@@ -67,8 +67,7 @@ foreach($results as $result)
 ?>
 <h1><a href="topic.php?id=<?php echo htmlentities($result->topic);?>"><?php echo htmlentities($result->field2);?></a></h1>
 <p><?php echo htmlentities($result->field3);?></p>
-<p><?php echo nl2br("htmlentities($result->field7)");?></p>
-nl2br("foo isn't\n bar")
+<p><?php echo nl2br("($result->field7)");?></p>
 
 <p>id: <?php echo htmlentities($result->id);?></p>
 <p>Author: <?php echo htmlentities($result->field4);?><br>Date: <?php echo htmlentities($result->field5);?></p>
