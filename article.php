@@ -16,7 +16,7 @@ $field5=$_POST['field5'];
 $field6=$_POST['field6'];
 $field7=$_POST['field7'];
 // Query for Query for Updation
-$sql="update articles set field2=:f2,field3=:f3,field4=:f4,field5=:f5,field6=:f6,field7=:f7 where id=:uid";
+$sql="update articles set field2=:f2,field3=:f3,field4=:f4,field5=:f5,field6=:f6,field7=:f7 where field2=:uid";
 //Prepare Query for Execution
 $query = $dbh->prepare($sql);
 // Bind the parameters
