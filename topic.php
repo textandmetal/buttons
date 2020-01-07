@@ -36,6 +36,7 @@ foreach($results as $result)
 						<div class="content">
 
 <h1><a href="/"><?php echo htmlentities($result->type);?></a></h1>
+<p><a href="/"><?php echo htmlentities($result->byline);?></a></p>
 
 <?php
 // This is the second loop in the code
