@@ -48,13 +48,6 @@ foreach($results as $result)
 {               
 ?>
 							<a href="/article-view.php?id=<?php echo htmlentities($result->id);?>" class="button big wide smooth-scroll-middle"><?php echo htmlentities($result->field2);?></a>
-<?php
-$link = mysqli_connect("localhost", "root", "GreenJeans33Winter1@", "buttons");
-$result2 = mysqli_query($link, "SELECT * FROM analytics where pageurl = '/articleviews.php?id=<?php echo htmlentities($result2->id);?>'");
-$num_rows = mysqli_num_rows($result2);
-
-echo "$num_rows About Page Views\n";
-?>
 <?php }} ?>
                             </p>
 <?php }} ?>
