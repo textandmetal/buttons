@@ -27,6 +27,7 @@ body{width:615px;font-family:arial;letter-spacing:1px;line-height:20px;}
 <?php include("analytics/pageviews.php"); ?><br>
 <?php include("analytics/individualviews.php"); ?><br>
 <?php include("analytics/aboutviews.php"); ?><br>
+<?php include("analytics/articleviews.php"); ?><br>
 <a href="add-tool-to-inventory.php"><button class="btn btn-primary"> Add Article</button></a>
 
 <hr />
