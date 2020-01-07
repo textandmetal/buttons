@@ -69,12 +69,8 @@ foreach($results as $result)
 <br>
 <?php include("php/about-button.php"); ?>						
 			</div>
-					<!--	<div class="image">
-							<img src="images/thinkpad.png" alt="" />
-						</div> -->
 					</section>
 			</div>
-
 		<?php include 'php/footer.html'; ?>
 	</body>
 </html>
