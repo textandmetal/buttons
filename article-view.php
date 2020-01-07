@@ -1,3 +1,5 @@
+<?php include("php/head.html"); ?>
+<body>
 <?php
 // include database connection file
 require_once'dbconfig.php';
@@ -33,11 +35,6 @@ echo "<script>alert('Record Updated successfully');</script>";
 echo "<script>window.location.href='index.php'</script>"; 
 }
 ?>
-
-<?php include("php/head.html"); ?>
-
-	<body>
-
 				<!-- Additional Elements -->
 					<section class="wrapper style1 align-center">
 						<div class="inner">
