@@ -38,6 +38,8 @@ try {
     VALUES ('$url')";
     // use exec() because no results are returned
     $conn->exec($sql);
+    $sql2 = "UPDATE pageviews SET numberofviews = numberofviews + 1";
+    $conn->exec($sql);
     }
 catch(PDOException $e)
     {
