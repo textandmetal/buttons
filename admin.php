@@ -24,7 +24,8 @@ body{width:615px;font-family:arial;letter-spacing:1px;line-height:20px;}
 <div class="col-md-12">
 <h3><a href="admin.php">admin</a></h3> 
 <p>PHP CRUDVS Admin Operations using PDO Extension</p>
-<?php include("pageviews.php"); ?>
+<?php include("analytics/pageviews.php"); ?><br>
+<?php include("analytics/individualviews.php"); ?><br>
 <a href="add-tool-to-inventory.php"><button class="btn btn-primary"> Add Article</button></a>
 
 <hr />
