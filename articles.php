@@ -24,6 +24,7 @@ body{width:615px;font-family:arial;letter-spacing:1px;line-height:20px;}
 <div class="col-md-12">
 <h3><a href="admin.php">admin</a></h3> 
 <p>PHP CRUDVS Admin Operations using PDO Extension</p>
+<p><a href="articles.php">Articles</a> | <a href="Users">Users</a></p>
 <?php include("analytics/pageviews.php"); ?><br>
 <?php include("analytics/individualviews.php"); ?><br>
 <?php include("analytics/aboutviews.php"); ?><br>
