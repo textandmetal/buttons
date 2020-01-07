@@ -62,7 +62,6 @@ foreach($results as $result)
 <?php }} ?>
 <br>
 <br>
-<br>
 <?php include("php/about-button.php"); ?>						
 			            </div>  
 					</section>
