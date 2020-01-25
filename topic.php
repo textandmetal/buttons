@@ -30,7 +30,7 @@ foreach($results as $result)
 				<!-- Banner -->
 					<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
 						<div class="content">
-                            <h1><a href="/"><?php echo htmlentities($result->type);?></a></h1>
+                            <h1><a href="/buttons/"><?php echo htmlentities($result->type);?></a></h1>
                             <p class="major"><?php echo htmlentities($result->byline);?></p>
 
                             <p>
@@ -55,7 +55,7 @@ if($query->rowCount() > 0)
 foreach($results as $result)
 {               
 ?>
-							<a href="/article.php?id=<?php echo htmlentities($result->id);?>" class="button big wide smooth-scroll-middle"><?php echo htmlentities($result->field2);?></a>
+							<a href="/buttons/article.php?id=<?php echo htmlentities($result->id);?>" class="button big wide smooth-scroll-middle"><?php echo htmlentities($result->field2);?></a>
 <?php }} ?>
                             </p>
 <?php }} ?>

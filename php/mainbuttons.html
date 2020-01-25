@@ -5,7 +5,7 @@ include("dbconfig.php");
                             <p>
 <?php
 	$database_username = 'root';
-	$database_password = 'GreenJeans33Winter1@';
+	$database_password = 'greenjeans33';
 	$pdo_conn = new PDO( 'mysql:host=localhost;dbname=buttons', $database_username, $database_password );
 ?>
 <?php	
@@ -24,7 +24,7 @@ include("dbconfig.php");
 	if(!empty($result)) { 
 		foreach($result as $row) {
 	?>
-        				<a href="/topic.php?id=<?php echo $row['id'];?>" class="button big wide smooth-scroll-middle"><?php echo $row['type'];?></a>
+        				<a href="/buttons/topic.php?id=<?php echo $row['id'];?>" class="button big wide smooth-scroll-middle"><?php echo $row['type'];?></a>
     <?php
 		}
 	}

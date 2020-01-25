@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "GreenJeans33Winter1@";
-$dbname = "buttons";
+$password = "greejeans33";
+$dbname = "analytics";
 $pageurl = $_SERVER['REQUEST_URI'];
 $userip = $_SERVER['REMOTE_ADDR'];
 $date = date('m/d/Y h:i:s a', time());
