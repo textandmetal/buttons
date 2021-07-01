@@ -9,7 +9,7 @@
 						<div class="content">
 	<h1><a href="/">Topics</a></h1>
 	                        <p class="major">Information made accessible</p>
-	                    <?php include 'php/mainbuttons.html'; ?>
+	                    <?php include 'php/masterbuttons.html'; ?>
 						</div>
 					</section>
 			    </div>

@@ -9,6 +9,7 @@ if(isset($_POST['update']))
 $userid=intval($_GET['id']);
 // Posted Values  
 
+$field1=$_POST['field1'];
 $field2=$_POST['field2'];
 $field3=$_POST['field3'];
 $field4=$_POST['field4'];
@@ -16,10 +17,11 @@ $field5=$_POST['field5'];
 $field6=$_POST['field6'];
 $field7=$_POST['field7'];
 // Query for Query for Updation
-$sql="update articles set field2=:f2,field3=:f3,field4=:f4,field5=:f5,field6=:f6,field7=:f7 where id=:uid";
+$sql="update articles set field1=:f1,field2=:f2,field3=:f3,field4=:f4,field5=:f5,field6=:f6,field7=:f7 where id=:uid";
 //Prepare Query for Execution
 $query = $dbh->prepare($sql);
 // Bind the parameters
+$query->bindParam(':f1',$field1,PDO::PARAM_STR);
 $query->bindParam(':f2',$field2,PDO::PARAM_STR);
 $query->bindParam(':f3',$field3,PDO::PARAM_STR);
 $query->bindParam(':f4',$field4,PDO::PARAM_STR);
@@ -45,7 +47,7 @@ echo "<script>window.location.href='index.php'</script>";
 <?php 
 // Get the userid
 $userid=intval($_GET['id']);
-$sql = "SELECT topic,field2,field3,field4,field5,field6,field7,id from articles where id=:uid";
+$sql = "SELECT topic,field1,field2,field3,field4,field5,field6,field7,id from articles where id=:uid";
 //Prepare the query:
 $query = $dbh->prepare($sql);
 //Bind the parameters
@@ -66,9 +68,15 @@ foreach($results as $result)
 <h1><a href="topic.php?id=<?php echo htmlentities($result->topic);?>"><?php echo htmlentities($result->field2);?></a></h1>
 <p><?php echo htmlentities($result->field3);?></p>
 											</header>
-<p><?php echo nl2br("$result->field7");?></p>
+<p><?php echo htmlentities("$result->field7");?></p>
 
-<p>Article id: <?php echo htmlentities($result->id);?><br>Author: <?php echo htmlentities($result->field4);?><br>Date: <?php echo htmlentities($result->field5);?></p>
+
+<?php echo nl2br($result->field4);?>
+
+<p>Article id: <?php echo htmlentities($result->id);?><br>
+Author: <?php echo htmlentities($result->field1);?><br>
+Date: <?php echo htmlentities($result->field5);?></p>
+
 <?php }} ?>
 										</div>
 									</section>

@@ -19,6 +19,13 @@ body{width:615px;font-family:arial;letter-spacing:1px;line-height:20px;}
 </style>
 </head>
 <body>
+				<!-- Additional Elements -->
+					<section class="wrapper style1 align-center">
+						<div class="inner">
+							<div class="index align-left">
+								<!-- Text -->
+									<section>
+										<div class="content">
 <div class="container">
 <div class="row">
 <div class="col-md-12">

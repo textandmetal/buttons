@@ -13,7 +13,7 @@ include("dbconfig.php");
 	if(!empty($_POST['search']['keyword'])) {
 		$search_keyword = $_POST['search']['keyword'];
 	}
-	$sql = 'SELECT * FROM topics WHERE type LIKE :keyword  ORDER BY id ASC ';
+	$sql = 'SELECT * FROM catergories WHERE catergory LIKE :keyword  ORDER BY id ASC ';
 	$query = $sql.$limit;
 	$pdo_statement = $pdo_conn->prepare($query);
 	$pdo_statement->bindValue(':keyword', '%' . $search_keyword . '%', PDO::PARAM_STR);
@@ -24,7 +24,7 @@ include("dbconfig.php");
 	if(!empty($result)) { 
 		foreach($result as $row) {
 	?>
-        				<a href="/buttons/topic.php?id=<?php echo $row['id'];?>" class="button big wide smooth-scroll-middle"><?php echo $row['type'];?></a>
+        				<a href="/buttons/copy-topic.php?id=<?php echo $row['id'];?>" class="button big wide smooth-scroll-middle"><?php echo $row['catergory'];?></a>
     <?php
 		}
 	}
